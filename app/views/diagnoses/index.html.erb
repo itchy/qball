@@ -1,0 +1,29 @@
+<h1>Listing diagnoses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Icd code</th>
+      <th>Icd description</th>
+      <th>Icd version</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @diagnoses.each do |diagnosis| %>
+      <tr>
+        <td><%= diagnosis.icd_code %></td>
+        <td><%= diagnosis.icd_description %></td>
+        <td><%= diagnosis.icd_version %></td>
+        <td><%= link_to 'Show', diagnosis %></td>
+        <td><%= link_to 'Edit', edit_diagnosis_path(diagnosis) %></td>
+        <td><%= link_to 'Destroy', diagnosis, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Diagnosis', new_diagnosis_path %>

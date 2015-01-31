@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cpt code:</strong>
+  <%= @procedure.cpt_code %>
+</p>
+
+<p>
+  <strong>Cpt description:</strong>
+  <%= @procedure.cpt_description %>
+</p>
+
+<p>
+  <strong>Cpt version:</strong>
+  <%= @procedure.cpt_version %>
+</p>
+
+<%= link_to 'Edit', edit_procedure_path(@procedure) %> |
+<%= link_to 'Back', procedures_path %>

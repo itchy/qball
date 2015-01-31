@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  icd_code: MyString
+  icd_description: MyString
+  icd_version: MyString
+
+two:
+  icd_code: MyString
+  icd_description: MyString
+  icd_version: MyString

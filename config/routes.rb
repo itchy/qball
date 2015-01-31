@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  resources :visit_procedures
+
+  resources :visit_diagnoses
+
+  resources :visit_records
+
+  resources :procedures
+
+  resources :diagnoses
+
+  resources :visits
+
+  resources :pharmacies
+
   resources :facilities
 
   resources :insurances

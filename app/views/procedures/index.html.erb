@@ -1,0 +1,29 @@
+<h1>Listing procedures</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cpt code</th>
+      <th>Cpt description</th>
+      <th>Cpt version</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @procedures.each do |procedure| %>
+      <tr>
+        <td><%= procedure.cpt_code %></td>
+        <td><%= procedure.cpt_description %></td>
+        <td><%= procedure.cpt_version %></td>
+        <td><%= link_to 'Show', procedure %></td>
+        <td><%= link_to 'Edit', edit_procedure_path(procedure) %></td>
+        <td><%= link_to 'Destroy', procedure, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Procedure', new_procedure_path %>

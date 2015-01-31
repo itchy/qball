@@ -1,0 +1,2 @@
+module VisitDiagnosesHelper
+end

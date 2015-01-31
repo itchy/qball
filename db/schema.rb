@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150131194754) do
+ActiveRecord::Schema.define(version: 20150131210126) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,14 @@ ActiveRecord::Schema.define(version: 20150131194754) do
     t.string   "state_prov"
     t.integer  "zip_code",         limit: 8
     t.string   "country"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "diagnoses", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
+    t.string   "icd_code"
+    t.string   "icd_description"
+    t.string   "icd_version"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -61,6 +69,20 @@ ActiveRecord::Schema.define(version: 20150131194754) do
     t.datetime "updated_at"
   end
 
+  create_table "pharmacies", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "procedures", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
+    t.string   "cpt_code"
+    t.string   "cpt_description"
+    t.string   "cpt_version"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "providers", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -74,6 +96,40 @@ ActiveRecord::Schema.define(version: 20150131194754) do
     t.uuid     "provider_id"
     t.uuid     "insurance_id"
     t.string   "billing_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "visit_diagnoses", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
+    t.uuid     "visit_id"
+    t.uuid     "patient_id"
+    t.uuid     "diagnosis_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "visit_procedures", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
+    t.uuid     "visit_id"
+    t.uuid     "patient_id"
+    t.uuid     "procedure_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "visit_records", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
+    t.uuid     "visit_id"
+    t.uuid     "patient_id"
+    t.text     "data"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "visits", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
+    t.uuid     "patient_id"
+    t.uuid     "provider_id"
+    t.uuid     "facility_id"
+    t.string   "visit_kind"
+    t.date     "date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
