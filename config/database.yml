@@ -91,3 +91,5 @@ production:
   database: health_production
   username: postgres 
   password: <%= ENV['HEALTH_DATABASE_PASSWORD'] %>
+  host: localhost
+  port: 5432
