@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Desktop Notification</title>
+  <!-- build:css styles/app-notify.css -->
+  <link rel="stylesheet" href="styles/app-notify.css">
+  <!-- endbuild -->
+</head>
+<body id="notify-app"
+      class="notification-window"
+      ng-class="addNotifyClasses()"
+      ng-app="wvNotifyWindowApp"
+      ng-controller="NotifyCtrl"
+      ng-click="expediteNotification($event)"
+      ui-keydown="{
+        'ctrl-shift-68': 'showDevTools()'
+      }"
+      ng-mouseenter="setMouseState(true)"
+      ng-mouseleave="setMouseState(false)"
+  >
+  <div id="header">
+    <div id="settings" class="fa fa-cog advanced" ng-click="goToSettings($event)"></div>
+    <div id="history-bar" class="advanced">
+      <button class="summary" ng-show="showSummaryLink()" ng-click="goToSummary($event)">Summary</button>
+      <button class="details" ng-show="showDetailsLink()" ng-click="goToNotifications($event)">Details</button>
+    </div>
+    <div class="hide-window fa fa-chevron-down advanced" ng-click="hideWindow($event)"></div>
+    <div id="weave-icon" class="icon advanced" ng-click="showClient($event)" title="Show Weave Window"></div>
+  </div>
+  <div id="busy-msg" ng-show="busyMsg()">
+    <span ng-bind="busyMsg()"></span>
+  </div>
+  <div id="busy-icon" ng-show="isBusy()">
+    <i class="fa fa-refresh spin-faster"></i>
+  </div>
+  <div id="content-view" ng-view></div>
+
+  <!-- build:js scripts/app-notify.js -->
+  <script src="scripts/vendor/lodash.js"></script>
+  <script src="scripts/vendor/moment.js"></script>
+  <script src="scripts/vendor/jquery.js"></script>
+  <script src="scripts/vendor/jquery-block-ui.js"></script>
+  <script src="scripts/vendor/angular.js"></script>
+  <script src="scripts/vendor/angular-animate.js"></script>
+  <script src="scripts/vendor/angular-route.js"></script>
+  <script src="scripts/vendor/angular-ui.js"></script>
+  <script src="scripts/vendor/angular-ui-keypress.js"></script>
+
+  <script src="scripts/nw-post.js"></script>
+
+  <script src="scripts/notify-app.js"></script>
+  <script src="config/config.js"></script>
+
+  <script src="modules/shared/config.js"></script>
+  <script src="modules/shared/services.js"></script>
+  <script src="modules/shared/services-error.js"></script>
+  <script src="modules/shared/services-global.js"></script>
+  <script src="modules/shared/services-vendor.js"></script>
+  <script src="modules/shared/services-localstorage.js"></script>
+  <script src="modules/shared/directives.js"></script>
+  <script src="modules/shared/directives-text.js"></script>
+  <script src="modules/shared/filters.js"></script>
+  <script src="modules/notify/notify-services.js"></script>
+  <script src="modules/notify/notify-directives.js"></script>
+  <script src="modules/notify/notify-controllers.js"></script>
+  <script src="modules/notify/notify-filters.js"></script>
+
+  <script src="scripts/templates-notify.js"></script>
+  <!-- endbuild -->
+
+</body>
+</html>

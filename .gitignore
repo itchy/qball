@@ -14,3 +14,9 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# OSX-specific
+.DS_Store
+
+#Jetbrains-specific (Tyson)
+.idea

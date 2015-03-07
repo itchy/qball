@@ -25,7 +25,7 @@ development:
   <<: *default
   database: health_development
   username: postgres
-  password: bubba
+  password: <%= ENV['HEALTH_DATABASE_PASSWORD'] %>
   host: localhost
   port: 5432
 
@@ -63,7 +63,7 @@ test:
   <<: *default
   database: health_test
   username: postgres
-  password: bubba
+  password: <%= ENV['HEALTH_DATABASE_PASSWORD'] %> 
   host: localhost
   port: 5432
 
@@ -89,5 +89,7 @@ test:
 production:
   <<: *default
   database: health_production
-  username: health
+  username: postgres 
   password: <%= ENV['HEALTH_DATABASE_PASSWORD'] %>
+  host: localhost
+  port: 5432
