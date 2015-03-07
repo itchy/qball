@@ -1,0 +1,10 @@
+#!/bin/bash
+
+DEPLOYHOST=$1
+
+if [ -z "$DEPLOYHOST" ]
+  then
+    DEPLOYHOST="adapter-manager-01"
+fi
+
+gulp build --host ${DEPLOYHOST} && gulp usemin && gulp deploy --host ${DEPLOYHOST}

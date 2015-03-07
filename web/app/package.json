@@ -1,0 +1,23 @@
+{
+  "name": "Weave",
+  "description": "Weave Client",
+  "main": "app://weave/index.html",
+  "version": "4.1.0",
+  "single-instance": true,
+  "node-main": "node-main.js",
+  "window": {
+    "show": false,
+    "toolbar": false,
+    "frame": false,
+    "as_desktop": false,
+    "title": "Weave",
+    "width": 350,
+    "height": 628,
+    "resizable": false,
+    "show_in_taskbar": true,
+    "icon": "images/app.png"
+  },
+  "chromium-args": "--child-clean-exit --ignore-certificate-errors --enable-threaded-compositing",
+  "dependencies": {},
+  "devDependencies": {}
+}
