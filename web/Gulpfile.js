@@ -15,11 +15,6 @@ global.$ = require('gulp-load-plugins')();
 global.gulp = require('gulp');
 global.path = require('path');
 
-//global.gulp.plumbedSrc = function( src ){
-//	return gulp.src.apply(gulp, Array.prototype.slice.call(arguments, 0))
-//		.pipe($.plumber());
-//};
-
 // Some global vars
 global.RELEASE = !!$.util.env.release;           // Minimize and optimize during a build?
 global.GOOGLE_ANALYTICS_ID = 'UA-XXXXX-X';       // https://www.google.com/analytics/web/
@@ -41,7 +36,7 @@ global.NW_VERSION = '0.11.6';
 global.DIRS = {
   APP: './app',
   DEBUG: './.debug',
-  RELEASE: './build/releases/' + NW_VERSION,
+  RELEASE: '../public',
   SCRIPTS_COMPILED: './.compiled'
 };
 

@@ -20,3 +20,11 @@
 
 #Jetbrains-specific (Tyson)
 .idea
+
+#NPM
+node_modules
+
+#Project-specific gui stuff
+.compiled
+.debug
+
