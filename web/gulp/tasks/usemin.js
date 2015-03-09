@@ -3,8 +3,8 @@
 
 gulp.task('usemin', function() {
   var assets = $.useref.assets();
-  var SRC = global.DIRS.APP + '/index.html';
-  var DEST = global.DIRS.DEBUG;
+  var SRC = global.DIRS.DEBUG + '/*.html';
+  var DEST = global.DIRS.RELEASE;
 
   return gulp.src(SRC)
     .pipe(assets)

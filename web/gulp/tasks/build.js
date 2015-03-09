@@ -6,8 +6,8 @@ var runSequence = require('run-sequence');
 
 gulp.task('build', function (callback) {
   runSequence(
-    'clean',
-    ['react', 'images', 'copy.fonts', 'copy.other'],
+    ['clean'],
+    ['react', 'images', 'copy.html', 'copy.fonts', 'copy.other'],
     ['lint', 'less', 'browserify'],
     callback
   );

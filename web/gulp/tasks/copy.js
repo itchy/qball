@@ -7,8 +7,8 @@ var scriptsSrc = global.DIRS.APP + '/scripts/**/*.js';
 var scriptsWorking = global.DIRS.SCRIPTS_COMPILED;
 
 var fontAwesomeFontSrc = './node_modules/font-awesome/fonts/**';
-var fontsSrc = global.DIRS.APP + '/fonts/**';
 var fontsWorking = global.DIRS.DEBUG + '/fonts';
+var fontsDist = global.DIRS.RELEASE + '/fonts';
 
 var htmlSrc = global.DIRS.APP + '/**/*.html';
 var htmlWorking = global.DIRS.DEBUG;
@@ -22,15 +22,22 @@ var otherWorking = global.DIRS.DEBUG;
 gulp.task('copy.scripts', function () {
   return gulp.src(scriptsSrc)
     .pipe($.changed(scriptsWorking))
-    .pipe(gulp.dest(scriptsWorking));
+    .pipe(gulp.dest(scriptsWorking))
+    .pipe(gulp.dest(fontsDist));
 });
 
 gulp.task('copy.fonts', function () {
   return gulp.src([
-    fontsSrc,
     fontAwesomeFontSrc
   ])
     .pipe(gulp.dest(fontsWorking));
+});
+
+gulp.task('copy.fonts.dist', function () {
+  return gulp.src([
+    fontsWorking + '/**'
+  ])
+    .pipe(gulp.dest(fontsDist));
 });
 
 gulp.task('copy.other', function () {
@@ -44,9 +51,4 @@ gulp.task('copy.html', function () {
     .pipe(browserSync.reload({
       stream:true
     }));
-});
-
-gulp.task('release', function () {
-  return gulp.src(global.DIRS.DEBUG + '/**/*')
-    .pipe(gulp.dest(global.DIRS.RELEASE));
 });
