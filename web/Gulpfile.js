@@ -31,8 +31,7 @@ global.AUTOPREFIXER_BROWSERS = [                 // https://github.com/ai/autopr
 ];
 global.isWatching = false;
 
-// Client-specific settings
-global.NW_VERSION = '0.11.6';
+// app-specific settings
 global.DIRS = {
   APP: './app',
   DEBUG: './.debug',

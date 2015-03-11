@@ -1,13 +1,13 @@
 {
-  "name": "WeaveClient",
-  "version": "5.0.0",
-  "homepage": "http://getweave.com/",
+  "name": "Medici-QBall",
+  "version": "0.1.0",
+  "homepage": "http://github.com/itchy/qball",
   "author": {
-    "name": "Weave, Inc."
+    "name": "Medici"
   },
   "repository": {
     "type": "git",
-    "url": "https://lab.getweave.com/weave/jubjub"
+    "url": "http://github.com/itchy/qball"
   },
   "readmeFilename": "README.md",
   "dependencies": {
@@ -42,6 +42,7 @@
     "gulp": "~3.8.11",
     "gulp-autoprefixer": "^2.1.0",
     "gulp-changed": "~1.1.1",
+    "gulp-debug": "^2.0.1",
     "gulp-filter": "^2.0.2",
     "gulp-if": "^1.2.5",
     "gulp-imagemin": "^2.2.1",
@@ -70,7 +71,7 @@
     "vinyl-source-stream": "~1.0.0",
     "watchify": "~2.4.x"
   },
-  "major": 5,
-  "minor": 0,
+  "major": 0,
+  "minor": 1,
   "revision": 0
 }

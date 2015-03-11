@@ -8,3 +8,9 @@ gulp.task('clean', function () {
   ], {read: false})
     .pipe(vinylPaths(del));
 });
+
+gulp.task('clean-public', function () {
+  del('../public/*', {
+    force: true
+  });
+});
