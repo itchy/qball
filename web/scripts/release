@@ -1,2 +1,0 @@
-#!/bin/bash
-gulp build && gulp clean-public && gulp usemin && gulp copy.fonts.dist

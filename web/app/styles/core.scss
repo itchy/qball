@@ -1,0 +1,26 @@
+
+* {
+  outline: none !important;
+  box-sizing: border-box;
+}
+
+/* Space out content a bit */
+body {
+  background-position: initial;
+  background-repeat: inherit;
+
+  overflow: hidden;
+}
+
+.hide {
+  display: none;
+}
+
+.warn {
+  background-color: fade(yellow, 10%) !important;
+}
+
+.error {
+  background-color: fade(red, 10%) !important;
+}
+

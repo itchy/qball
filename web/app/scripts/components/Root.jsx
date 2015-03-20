@@ -1,21 +1,13 @@
 var React = require('react/addons');
-var DocumentTitle = require('react-document-title');
+var Router = require('react-router');
+var RouteHandler = Router.RouteHandler;
 
 var Root = React.createClass({
-  getInitialState: function() {
-    return {
-      name: 'my friend!'
-    };
-  },
-
   render: function() {
     return (
-      <DocumentTitle title="Weave Client">
-
-        <div className="page">
-          Hello, {this.state.name}!
-        </div>
-      </DocumentTitle>
+      <div className="root">
+        <RouteHandler/>
+      </div>
     );
   }
 });

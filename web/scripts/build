@@ -1,0 +1,9 @@
+#!/bin/bash
+gulp clean-release
+gulp copy-html  # Run as debug, because of usemin
+gulp copy-fonts --release
+gulp copy-other --release
+gulp styles # Run as debug, because of usemin
+NODE_ENV=production webpack -p
+gulp copy-scripts
+gulp usemin

@@ -1,26 +1,23 @@
-/*jshint indent: 2, node: true, nomen: true, browser: true*/
-/*global React */
-
-global.$ = global.jQuery = require('jquery');
-global._ = require('lodash');
-global.moment = require('moment');
-global.bootstrap = require('bootstrap');
-global.reactBootstrap = require('react-bootstrap');
-global.accounting = require('accounting');
-global.cron = require('cron');
-
-
-if (typeof Promise === 'undefined') {
-  global.Promise = require('es6-promise').Promise;
-}
+//global.jQuery = require('jquery');
+//global.$ = global.jQuery;
+//global._ = require('lodash');
+//global.moment = require('moment');
+//global.bootstrap = require('bootstrap');
+//global.reactBootstrap = require('react-bootstrap');
+//global.accounting = require('accounting');
+//global.cron = require('cron');
 
 var React = require('react/addons');
 var Router = require('./router');
+var _ = require('lodash');
+
+if (__DEV__) {
+  require('../styles/app.scss');
+}
 
 Router.run(function (Handler, states) {
-  React.render(<Handler/>, document.getElementById('react-root'));
+  React.render(<Handler/>, document.body);
 });
-
 
 
 //// Miscellaneous scripts
