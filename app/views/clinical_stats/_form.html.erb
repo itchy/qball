@@ -1,0 +1,29 @@
+<%= form_for(@clinical_stat) do |f| %>
+  <% if @clinical_stat.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@clinical_stat.errors.count, "error") %> prohibited this clinical_stat from being saved:</h2>
+
+      <ul>
+      <% @clinical_stat.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :string %><br>
+    <%= f.text_field :string %>
+  </div>
+  <div class="field">
+    <%= f.label :uuid %><br>
+    <%= f.text_field :uuid %>
+  </div>
+  <div class="field">
+    <%= f.label :json %><br>
+    <%= f.text_field :json %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

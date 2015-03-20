@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>String:</strong>
+  <%= @clinical_stat.string %>
+</p>
+
+<p>
+  <strong>Uuid:</strong>
+  <%= @clinical_stat.uuid %>
+</p>
+
+<p>
+  <strong>Json:</strong>
+  <%= @clinical_stat.json %>
+</p>
+
+<%= link_to 'Edit', edit_clinical_stat_path(@clinical_stat) %> |
+<%= link_to 'Back', clinical_stats_path %>
