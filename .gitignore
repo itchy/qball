@@ -25,6 +25,5 @@
 node_modules
 
 #Project-specific gui stuff
-.compiled
-.debug
-
+_bundled
+_debug

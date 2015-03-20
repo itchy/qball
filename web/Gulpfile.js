@@ -14,11 +14,14 @@
 global.$ = require('gulp-load-plugins')();
 global.gulp = require('gulp');
 global.path = require('path');
+global.PKG = require('./package.json');
+global.VERSION = 'x.x.x';
+global.GITHASH = '?';
 
 // Some global vars
-global.RELEASE = !!$.util.env.release;           // Minimize and optimize during a build?
-global.GOOGLE_ANALYTICS_ID = 'UA-XXXXX-X';       // https://www.google.com/analytics/web/
-global.AUTOPREFIXER_BROWSERS = [                 // https://github.com/ai/autoprefixer
+global.RELEASE = !!$.util.env.release || process.env.NODE_ENV === 'production';
+global.GOOGLE_ANALYTICS_ID = 'UA-XXXXX-X';
+global.AUTOPREFIXER_BROWSERS = [
 	'ie >= 10',
 	'ie_mob >= 10',
 	'ff >= 30',
@@ -29,14 +32,13 @@ global.AUTOPREFIXER_BROWSERS = [                 // https://github.com/ai/autopr
 	'android >= 4.4',
 	'bb >= 10'
 ];
-global.isWatching = false;
 
-// app-specific settings
+// Client-specific settings
 global.DIRS = {
   APP: './app',
-  DEBUG: './.debug',
-  RELEASE: '../public',
-  SCRIPTS_COMPILED: './.compiled'
+  DEBUG: './_debug',
+  RELEASE_ASSETS: '../public',
+  SCRIPTS_COMPILED: './_bundled'
 };
 
 // Load separate tasks

@@ -1,0 +1,5 @@
+#!/bin/bash
+CONTENT_BASE='./_debug'
+gulp clean-dev
+gulp copy-html --stripCss
+webpack-dev-server --hot --progress --colors --inline --content-base ${CONTENT_BASE}
