@@ -1,0 +1,2 @@
+module ClinicalStatsHelper
+end

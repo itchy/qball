@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :wellness_stats
+
+  resources :clinical_stats
+
   resources :visit_procedures
 
   resources :visit_diagnoses
