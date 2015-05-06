@@ -3,6 +3,8 @@
 // Font-awesome default variables
 @import "../../node_modules/font-awesome/scss/variables";
 
+@import "mixins/bem";
+
 // Global variables
 @import 'variables';
 
@@ -10,8 +12,6 @@
 @import "fonts";
 
 @import "core";
-
-@import "mixins/bem";
 
 // Pages
 @import "apps/root";
