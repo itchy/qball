@@ -2,6 +2,7 @@
 
 // Font-awesome default variables
 @import "../../node_modules/font-awesome/scss/variables";
+@import "../../node_modules/foundation-sites/scss/normalize";
 
 @import "mixins/bem";
 
@@ -11,6 +12,7 @@
 // Custom fonts
 @import "fonts";
 
+@import "foundation";
 @import "core";
 
 // Pages

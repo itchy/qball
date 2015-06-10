@@ -1,12 +1,3 @@
-//global.jQuery = require('jquery');
-//global.$ = global.jQuery;
-//global._ = require('lodash');
-//global.moment = require('moment');
-//global.bootstrap = require('bootstrap');
-//global.reactBootstrap = require('react-bootstrap');
-//global.accounting = require('accounting');
-//global.cron = require('cron');
-
 var React = require('react/addons');
 var Router = require('./router');
 var _ = require('lodash');

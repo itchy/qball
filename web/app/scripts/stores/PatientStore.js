@@ -1,11 +1,9 @@
-'use strict';
-
 var Reflux = require('reflux');
-var DashboardActions = require('../actions/DashboardActions');
+var PatientActions = require('../actions/PatientActions');
 
 var DashboardStore = Reflux.createStore({
 
-  listenables: DashboardActions,
+  listenables: dashboardActions,
 
   init: function() {
     this.message = '';
@@ -14,3 +12,5 @@ var DashboardStore = Reflux.createStore({
 });
 
 module.exports = DashboardStore;
+
+

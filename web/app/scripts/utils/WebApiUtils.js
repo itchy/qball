@@ -1,6 +1,7 @@
-var DataApi = require('amygdala');
+var Restful = require('restful.js');
 var StringUtils = require('./StringUtils');
 var ServerActions = require('../actions/ServerActions');
+var DataApiConfig = require('../constants/DataApiConfig');
 
 module.exports = {
 
@@ -40,60 +41,11 @@ module.exports = {
     };
   },
 
-  DataApi: new DataApi({
-    config: {
-      apiUrl: global.JASPER.REST_PROTOCOL + global.JASPER.API_HOST + ':' + window.JASPER.API_PORT,
-      idAttribute: 'url',
-      headers: {},
-      localStorage: false
-    },
-    schema: {
-      adapters: {
-        url: '/adapterapi/list_all',
-        parse: function(obj) {
-          var data = obj.data
-            ? Object.keys(obj.data).length
-            ? obj.data
-            : {}
-            : {};
+  DataApi: function() {
+    // See https://github.com/marmelab/restful.js for other options
+   return Restful(DataApiConfig.host)
+     .protocol(DataApiConfig.protocol)
+     .port(DataApiConfig.port);
+  }
 
-          console.log('ADAPTERS_LIST from Amygdala:', data);
-
-          ServerActions.loadedAdapters([data]);
-        }
-      },
-      adaptersOld: {
-        url: '/adapterapi/list',
-        parse: function(obj) {
-          console.log('ADAPTERS_LISTOLD from Amygdala:', obj);
-
-          // If only 1 data-point in response, we have to manually create
-          // array, due to limitation in Amygdala.
-          return obj.data
-            ? obj.data.length
-              ? obj.data.length === 1
-                ? [obj.data]
-                : obj.data
-              : []
-            : [];
-        }
-      },
-      stats: {
-        url: '/adapterapi/stats',
-        parse: function(obj) {
-          console.log('STATS from Amygdala:', obj);
-
-          // If only 1 data-point in response, we have to manually create
-          // array, due to limitation in Amygdala.
-          return obj.data
-            ? obj.data.length
-              ? obj.data.length === 1
-                ? [obj.data]
-                : obj.data
-              : []
-            : [];
-        }
-      }
-    }
-  })
 };

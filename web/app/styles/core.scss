@@ -24,20 +24,24 @@ body {
   background-color: fade(red, 10%) !important;
 }
 
+.Root {
+  padding: 15px;
+}
 
 .MasterMenu {
 
   // nested element
   @include e(title) {
-
+    padding: 0;
   }
 
   // nested element
   @include e(star) {
+    padding: 0;
 
     // nested element's modifier
     @include m(active) {
-
+      padding: 0;
     }
   }
 }

@@ -1,12 +1,14 @@
 var React = require('react/addons');
 var DocumentTitle = require('react-document-title');
+var Chart = require('../shared/Chart');
+var DashboardStore = require('../../stores/DashboardStore');
 
 var Dashboard = React.createClass({
   render: function() {
     return (
       <DocumentTitle title="Dashboard">
         <div className="dashboard">
-          <h1>DASHBOARD</h1>
+          <Chart model="" name="Chart 1"></Chart>
         </div>
       </DocumentTitle>
     );

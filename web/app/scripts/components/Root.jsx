@@ -7,7 +7,7 @@ var MasterMenu = require('./shared/MasterMenu');
 var Root = React.createClass({
   render: function() {
     return (
-      <div className="root">
+      <div className="Root">
         <MasterMenu/>
         <RouteHandler/>
       </div>
