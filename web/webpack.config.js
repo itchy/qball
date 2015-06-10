@@ -37,7 +37,7 @@ function getPlugins() {
 module.exports = {
   entry : {
     app: [
-      'webpack-dev-server/client?http://localhost:8080/app/',
+      'webpack-dev-server/client?http://localhost:8081/app/',
       'webpack/hot/only-dev-server',
       './app/scripts/app.jsx'
     ]

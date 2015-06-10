@@ -24,3 +24,20 @@ body {
   background-color: fade(red, 10%) !important;
 }
 
+
+.MasterMenu {
+
+  // nested element
+  @include e(title) {
+
+  }
+
+  // nested element
+  @include e(star) {
+
+    // nested element's modifier
+    @include m(active) {
+
+    }
+  }
+}

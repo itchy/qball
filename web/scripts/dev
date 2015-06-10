@@ -2,4 +2,4 @@
 CONTENT_BASE='./_debug'
 gulp clean-dev
 gulp copy-html --stripCss
-webpack-dev-server --hot --progress --colors --inline --content-base ${CONTENT_BASE}
+webpack-dev-server --hot --progress --colors --inline --port 8081 --content-base ${CONTENT_BASE}
