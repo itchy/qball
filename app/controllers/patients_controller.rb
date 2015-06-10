@@ -21,6 +21,7 @@ class PatientsController < ApplicationController
   def edit
   end
 
+
   # POST /patients
   # POST /patients.json
   def create
@@ -59,6 +60,15 @@ class PatientsController < ApplicationController
       format.html { redirect_to patients_url, notice: 'Patient was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def wellness
+    start = params[:start].present? ? params[:start].to_datetime : '1900-01-01'.to_datetime
+    stop = params[:stop].present? ? params[:stop].to_datetime : '2200-01-01'.to_datetime
+    min = params[:min].present? ? params[:min].to_i : -1_000
+    max = params[:max].present? ? params[:max].to_i : 1_000
+    wellness_stats = Patient.get_wellness_stats('patient', params[:patient_id], params[:type], start, stop, min, max)
+    render json: wellness_stats
   end
 
   private
